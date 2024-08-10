@@ -57,12 +57,12 @@ t = """26 years of age. I speak Danish, English, Python and SQL fluently.
 ut.courier_text("About Me", font_size=30, text_align="left")
 ut.courier_text(t, font_size=14, text_align=14)
 
-st.header("Projects")
+ut.vertical_space(1)
+ut.courier_text("Projects", font_size=30)
 t = """During my time with DBU I have built, developed and maintained 
     our end-to-end data analysis platform. This includes"""
 
 ut.courier_text(t)
-
 
 items = [
     "Relational cloud database (Microsoft SQL server)",

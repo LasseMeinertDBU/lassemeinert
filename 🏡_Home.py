@@ -1,5 +1,10 @@
 import streamlit as st
 import utils as ut
+import matplotlib.pyplot as plt
+from importlib import reload
+
+reload(ut)
+# st.sidebar.title("Navigation")
 
 pdf_file_name = "docs/Lasse_Meinert_CV.pdf"
 
@@ -16,8 +21,6 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-st.sidebar.title("Navigation")
-
 # st.title("Lasse Meinert ")
 ut.courier_text("Lasse Meinert", 40, "center")
 
@@ -28,8 +31,8 @@ ut.vertical_space(1)
 cols = st.columns((2))
 cols[0].image("img/cropped_profil.png")
 
-t = """Data scientist working for the Danish football association (Dansk Boldsspil-Union). 
-    BSc Data Science. UEFA C coaching license, working towards UEFA B license. 
+t = """Data scientist working for the Danish football association (Dansk Boldsspil-Union).
+    BSc Data Science. UEFA C coaching license, working towards UEFA B license.
     Performance analyst and opponent scout for the Danish U21 men's. Drone certificate. """
 
 items = [
@@ -49,17 +52,90 @@ with cols[1] as c:
 
 st.markdown("---")
 
-t = """26 years of age. I speak Danish, English, Python and SQL fluently. 
-    I've been with DBU since leaving the IT-University in June 2022. 
-    I've played football since the age of 3 and only recently quit 
+t = """26 years of age. I speak Danish, English, Python and SQL fluently.
+    I've been with DBU since leaving the IT-University in June 2022.
+    I've played football since the age of 3 and only recently quit
     the top of the amateur levels to have more time for work and recreation. """
 
 ut.courier_text("About Me", font_size=30, text_align="left")
-ut.courier_text(t, font_size=14, text_align=14)
+cols = st.columns((1, 2))
 
-ut.vertical_space(1)
+with cols[0] as c:
+    ut.courier_text(t, font_size=14, text_align=14, container=c)
+
+
+categories, values = ut.example_data()
+
+N = len(categories)
+theta = ut.radar_factory(N, frame="polygon")
+
+fig, ax = plt.subplots(
+    figsize=(9, 9), nrows=1, ncols=1, subplot_kw=dict(projection="radar")
+)
+fig.subplots_adjust(wspace=0.25, hspace=0.20, top=0.85, bottom=0.05)
+
+case_data = ut.example_data()
+
+# colors = ["b", "r", "g", "m", "y"] * 2
+color = "#76f5a0"
+# Plot the four cases from the example data on separate Axes
+# for category, value in zip(categories, values):
+ax.set_rgrids([0.2, 0.4, 0.6, 0.8])
+# ax.set_title(
+#     category,
+#     weight="bold",
+#     size="medium",
+#     position=(0.5, 1.1),
+#     horizontalalignment="center",
+#     verticalalignment="center",
+# )
+# for d, color in zip(case_data, colors):
+ax.plot(theta, values, color=color)
+ax.fill(
+    theta,
+    values,
+    facecolor=color,
+    alpha=0.25,
+)  # label="_nolegend_")
+ax.set_varlabels(categories)
+for label in ax.get_xticklabels():
+    label.set_color("white")
+
+fig.set_facecolor("None")
+
+ax.xaxis.grid(False)
+ax.spines["polar"].set_color("None")
+ax.set_yticklabels([])
+
+ax.patch.set_facecolor("None")
+
+fig.text(
+    0.5,
+    0.965,
+    "Totally accurate profile",
+    horizontalalignment="center",
+    color="white",
+    weight="bold",
+    size="large",
+)
+
+fig.text(
+    0.5,
+    0.935,
+    "4 seasons of data (2 years)",
+    horizontalalignment="center",
+    color="white",
+    weight="regular",
+    size="large",
+)
+
+cols[1].pyplot(fig)
+
+st.divider()
+
+# ut.vertical_space(1)
 ut.courier_text("Projects", font_size=30)
-t = """During my time with DBU I have built, developed and maintained 
+t = """During my time with DBU I have built, developed and maintained
     our end-to-end data analysis platform. This includes"""
 
 ut.courier_text(t)

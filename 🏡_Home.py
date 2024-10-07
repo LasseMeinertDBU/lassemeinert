@@ -55,13 +55,18 @@ st.markdown("---")
 t = """26 years of age. I speak Danish, English, Python and SQL fluently.
     I've been with DBU since leaving the IT-University in June 2022.
     I've played football since the age of 3 and only recently quit
-    the top of the amateur levels to have more time for work and recreation. """
+    the top amateur level to have more time for work and recreation. """
+
+t_2 = """ I've lived in Copenhagen for the past 5 years and 
+I'm an avid traveller, both privately and whenever national team duty calls."""
 
 ut.courier_text("About Me", font_size=30, text_align="left")
 cols = st.columns((1, 2))
 
 with cols[0] as c:
     ut.courier_text(t, font_size=14, text_align=14, container=c)
+    ut.vertical_space(1)
+    ut.courier_text(t_2, font_size=14, text_align=14, container=c)
 
 
 categories, values = ut.example_data()
@@ -134,22 +139,22 @@ cols[1].pyplot(fig)
 st.divider()
 
 # ut.vertical_space(1)
-ut.courier_text("Projects", font_size=30)
+ut.courier_text("Experience", font_size=30)
 t = """During my time with DBU I have built, developed and maintained
-    our end-to-end data analysis platform. This includes"""
+    our end-to-end data analysis platform. This includes:"""
 
 ut.courier_text(t)
 
 items = [
     "Relational cloud database (Microsoft SQL server)",
     "Automatic API pulls from data suppliers (Wyscout, OPTA) wrapped in Python-based Docker",
-    "Automatic enrichment of SQL tables in Python (xG, xT, possession sequences)",
-    "Automatically updating data visualizations in webapp (Streamlit wrapped in Docker) -- this includes standard reporting like a match report, team report, ...",
+    "Automatic enrichment of SQL tables in Python (xG, xT, possession sequences, ...)",
+    "Automatically updating data visualizations in webapp (Streamlit wrapped in Docker) -- this includes standard reporting like a match report, team report, ..., and drill-down tools for our analysts",
 ]
 
 # Create a list with custom bullets
 ut.pretty_bullets(items=items, font_size=14)
-
+st.divider()
 ut.courier_text("Contact", font_size=30)
 # st.write("Provide contact information here.")
 linked = """<a href="https://linkedin.com/in/lassemeinertpedersen" class="st-emotion-cache-1khpbey e1x90zqc0">LinkedIn</a>"""

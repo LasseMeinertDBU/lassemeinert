@@ -2,9 +2,11 @@ import streamlit as st
 import utils as ut
 import matplotlib.pyplot as plt
 from importlib import reload
+from streamlit_navigation_bar import st_navbar
 
 reload(ut)
 # st.sidebar.title("Navigation")
+
 
 pdf_file_name = "docs/Lasse_Meinert_CV.pdf"
 
@@ -14,12 +16,12 @@ with open(pdf_file_name, "rb") as pdf_file:
 # with open("styles/main.css") as f:
 #     st.markdown("<style>{}</style>".format(f.read()), unsafe_allow_html=True)
 
-st.set_page_config(
-    page_title="Main",
-    page_icon=":wave:",
-    layout="wide",
-    initial_sidebar_state="expanded",
-)
+# st.set_page_config(
+#     page_title="Main",
+#     page_icon=":wave:",
+#     layout="wide",
+#     initial_sidebar_state="expanded",
+# )
 
 # st.title("Lasse Meinert ")
 ut.courier_text("Lasse Meinert", 40, "center")

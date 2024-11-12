@@ -33,7 +33,7 @@ a, _, b = st.columns((1, 0.05, 1))
 ut.courier_text(
     """I finished my bachelor of science in data science at the IT-University
 in Copenhagen in June, 2021. My bachelor thesis is titled "Networks and Passing Performance"
-and I was awarded the highest passing grade at my oral defense.""",
+and I was awarded the highest grade at my oral defense.""",
     14,
     "left",
     container=a,
@@ -60,7 +60,7 @@ ut.courier_text(
 
 ut.vertical_space(1, container=a)
 ut.courier_text(
-    """And you can download my ITU transcript (120 BSc credits and 37 MSc credits, currently) here: """,
+    """You can download my ITU transcript (120 BSc credits and 37 MSc credits, currently) here: """,
     14,
     "left",
     container=a,
@@ -84,7 +84,7 @@ ut.courier_text(
     """I finished high school top of my class in 2016 with A-levels in Danish*, History*, Mathematics** and Social science**.
 My final <i>study line project</i> (<i>Studieretningsprojekt</i> in Danish) was a 
 comparative  historical and mathematical analysis of two variations of poker: 
-Five card draw and Texas Hold 'em. I was awarded the highest passing grade for the paper.""",
+Five card draw and Texas Hold 'em. I was awarded the highest grade for the paper.""",
     14,
     "left",
     container=a,

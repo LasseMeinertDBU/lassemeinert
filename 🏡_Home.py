@@ -40,7 +40,7 @@ t = """Data scientist working for the Danish football association (Dansk Boldssp
 items = [
     "Danish, English, Python, SQL, Azure",
     "Experienced data scientist & youth elite footballer",
-    "Performance analyst for women's national team in 2023 (up to and including WC in AUS/NZ '23)",
+    "Performance analyst for the women's national team in 2023 (up to and including WC in AUS/NZ '23)",
 ]
 
 with cols[1] as c:
@@ -54,8 +54,8 @@ with cols[1] as c:
 
 st.markdown("---")
 
-t = """26 years of age. I speak Danish, English, Python and SQL fluently.
-    I've been with DBU since leaving the IT-University in June 2022.
+t = """26 years of age. I speak Danish, English, Python, and SQL fluently.
+    I've been with DBU since leaving the IT-University of Copenhagen in June 2022.
     I've played football since the age of 3 and only recently quit
     the top amateur level to have more time for work and recreation. """
 
@@ -142,7 +142,7 @@ st.divider()
 
 # ut.vertical_space(1)
 ut.courier_text("Experience", font_size=30)
-t = """During my time with DBU I have built, developed and maintained
+t = """During my time with DBU I have built, developed, and maintained
     our end-to-end data analysis platform. This includes:"""
 
 ut.courier_text(t)
